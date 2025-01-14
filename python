@@ -1,0 +1,29 @@
+""" Emily is organizing a taco party and needs to determine the total number of tacos required and the total cost. Each attendee at the party will consume 2 tacos. To ensure there are enough tacos:
+
+
+
+If there are 10 or more attendees, Emily will need to provide an additional 5 tacos.
+If there are fewer than 10 attendees, Emily must ensure a minimum of 20 tacos are provided.
+
+
+The cost of each taco is $25. Write a program that calculates both the total number of tacos required and the total cost based on the number of attendees.
+
+Input format :
+The input consists of an integer n, representing the number of attendees.
+
+Output format :
+The first line prints "Number of tacos needed: " followed by an integer representing the number of tacos needed for n attendees.
+
+The second line prints "Total cost: " followed by an integer representing the total cost."""
+
+
+# You are using Python
+n = int(input())
+cost_per_taco = 25
+tacos_per_person = 2
+
+number_of_tacos_needed = n * tacos_per_person + (n >= 10) * 5
+number_of_tacos_needed += (n < 10) * (20 - n *tacos_per_person)
+total_cost =  number_of_tacos_needed * cost_per_taco
+print(f"Number of tacos needed: {number_of_tacos_needed}")
+print(f"Total cost: {total_cost}")
